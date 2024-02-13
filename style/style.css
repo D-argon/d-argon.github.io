@@ -41,7 +41,7 @@ body, html {
     }
 
     75% {
-        font-size: var(--fSize);
+        font-size: calc(var(--fSize) + 1em);
     }
 
     100% {
@@ -53,5 +53,5 @@ body, html {
 .character {
     position: relative;
     color: black;
-    animation: spiral 4s cubic-bezier(.6, 0, .6, 1) infinite;
+    animation: spiral 4s cubic-bezier(.5, 0, .5, 1) infinite;
 }
