@@ -1,0 +1,57 @@
+:root {
+    --displace: 75px;
+    --fSize: 2em;
+}
+
+body, html {
+  background-color: #d2d2d2;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+
+  height: 100%;
+}
+
+.jitter {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    position: absolute;
+}
+
+@keyframes spiral {
+    0% {
+        top: calc(var(--displace) * -1);
+        font-size: var(--fSize);
+    }
+
+    25% {
+        font-size: 1em;
+    }
+
+    50% {
+        top: var(--displace);
+        font-size: var(--fSize);
+    }
+
+    75% {
+        font-size: var(--fSize);
+    }
+
+    100% {
+        top: calc(var(--displace) * -1);
+        font-size: var(--fSize);
+    }
+}
+
+.character {
+    position: relative;
+    color: black;
+    animation: spiral 4s cubic-bezier(.6, 0, .6, 1) infinite;
+}
